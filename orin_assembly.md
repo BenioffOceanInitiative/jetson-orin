@@ -174,3 +174,24 @@ A video of the tinning process can be found [here](https://www.youtube.com/watch
 * First, place the female jumper between the auto_on and gnd pins, at the back of the orin nano, under the sd card slot.
 <img src="assets/auto_on_pins.JPEG">
 <img src="assets/jumper.JPEG">
+
+4.1:
+* Place the momentary push button switches into the holes on the front of the enclosure, and secure them with the included nuts.
+
+4.2:
+* Connect the power button connector between the PWR_BTN and GND pins on the Orin Nano.
+<img src="assets/power_button.JPEG">
+
+4.3:
+* Connect the reset button connector between the RST_BTN and GND pins on the Orin Nano.
+<img src="assets/power_and_reset_button.JPEG">
+
+## Step 5: Final Assembly
+5.1:
+* Place the Orin Nano into the bottom half of the enclosure, and route the wires for the momentary push button switches around the left side of the unit. Making sure that the wires do not get pinched between the enclosure and the Orin unit. The top should seat easily against the bottom half, if it does not, check for pinched wires. 
+<img src="assets/wire_routing.JPEG">
+
+5.2:
+* Secure the top half of the enclosure to the bottom half with the M3x20mm screws.
+
+<img src="assets/orin_nano_enclosure_assembled.JPEG">
