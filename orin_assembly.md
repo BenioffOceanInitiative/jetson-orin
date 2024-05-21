@@ -187,8 +187,11 @@ A video of the tinning process can be found [here](https://www.youtube.com/watch
 <img src="assets/power_and_reset_button.JPEG">
 
 ## Step 5: Final Assembly
+5.0:
+* If you are not hard mounting, cut the bosses off the bottom of the enclosure
+<img src="assets/cut_boss.JPEG">
 5.1:
-* Place the Orin Nano into the bottom half of the enclosure, and route the wires for the momentary push button switches around the left side of the unit. Making sure that the wires do not get pinched between the enclosure and the Orin unit. The top should seat easily against the bottom half, if it does not, check for pinched wires. 
+* Place the Orin Nano into the bottom half of the enclosure, and route the wires for the momentary push button switches around the left side of the unit. If hard mounting, install the 4 2.5mm screws where the base used to be mounted. Making sure that the wires do not get pinched between the enclosure and the Orin unit. The top should seat easily against the bottom half, if it does not, check for pinched wires. 
 <img src="assets/wire_routing.JPEG">
 
 5.2:
