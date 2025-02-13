@@ -1,0 +1,178 @@
+2024-09-27 08:16:00,960 - app - ERROR - Error uploading: Constructor parameter should be str
+2024-09-27 08:16:03,150 - app - INFO - Cleaning up resources...
+2024-09-27 08:16:03,150 - app - INFO - Stopped TrackerManager
+2024-09-27 08:16:03,150 - app - INFO - Cleaned up TrackerManager resources
+2024-09-27 08:16:03,150 - app - INFO - Disconnected from WebSocket server
+2024-09-27 08:16:03,150 - app - INFO - AuthManager cleaned up
+2024-09-27 08:16:03,151 - app - INFO - Tracking task cancelled
+2024-09-27 08:16:03,151 - app - INFO - Stopped TrackerManager
+2024-09-27 08:16:03,151 - app - INFO - Cleaned up TrackerManager resources
+2024-09-27 08:17:16,386 - app - INFO - Starting the application
+2024-09-27 08:17:16,386 - app - INFO - Configuration loaded from configuration/config.json
+2024-09-27 08:17:16,387 - app - INFO - Database initialized successfully at tracking_data.db
+2024-09-27 08:17:16,387 - app - WARNING - Configuration key 'cloud_function_url' not found. Using default value: None
+2024-09-27 08:17:16,387 - app - WARNING - Configuration key 'server_upload_url' not found. Using default value: None
+2024-09-27 08:17:16,387 - app - INFO - Initialized AuthManager for environment: dev
+2024-09-27 08:17:16,387 - app - INFO - Using urls ws://localhost/sockets/device, http://localhost/api/auth/device_auth
+2024-09-27 08:17:16,387 - app - INFO - Setting Mode to collect_data
+2024-09-27 08:17:16,387 - app - INFO - Configuration updated and saved to configuration/config.json
+2024-09-27 08:17:16,426 - app - INFO - Configuration updated and saved to configuration/config.json
+2024-09-27 08:17:16,426 - app - INFO - Tracker Mode is collect_data
+2024-09-27 08:17:16,426 - app - WARNING - Configuration key 'fps' not found. Using default value: 30
+2024-09-27 08:17:16,551 - app - INFO - Initialized TrackerManager with mode: collect_data
+2024-09-27 08:17:16,551 - app - INFO - Mode set to collect_data
+2024-09-27 08:17:16,552 - app - INFO - Starting tracking in mode: collect_data
+2024-09-27 08:17:16,554 - app - ERROR - Error during authentication: Cannot connect to host localhost:80 ssl:default [Connect call failed ('127.0.0.1', 80)]
+2024-09-27 08:17:16,554 - app - ERROR - 
+2024-09-27 08:17:21,555 - app - ERROR - Error during authentication: Cannot connect to host localhost:80 ssl:default [Connect call failed ('127.0.0.1', 80)]
+2024-09-27 08:17:21,555 - app - ERROR - Cannot connect to host localhost:80 ssl:default [Connect call failed ('127.0.0.1', 80)]
+2024-09-27 08:17:21,610 - app - INFO - Sending data from tracking loop
+2024-09-27 08:17:21,618 - app - ERROR - Error uploading: Constructor parameter should be str
+2024-09-27 08:17:23,442 - app - INFO - Cleaning up resources...
+2024-09-27 08:17:23,442 - app - INFO - Stopped TrackerManager
+2024-09-27 08:17:23,442 - app - INFO - Cleaned up TrackerManager resources
+2024-09-27 08:17:23,442 - app - INFO - Disconnected from WebSocket server
+2024-09-27 08:17:23,442 - app - INFO - AuthManager cleaned up
+2024-09-27 08:17:23,442 - app - INFO - Tracking task cancelled
+2024-09-27 08:17:23,442 - app - INFO - Stopped TrackerManager
+2024-09-27 08:17:23,442 - app - INFO - Cleaned up TrackerManager resources
+2024-10-16 11:34:17,229 - app - INFO - Starting the application
+2024-10-16 11:34:17,230 - app - INFO - Configuration loaded from configuration/config.json
+2024-10-16 11:34:17,231 - app - INFO - Database initialized successfully at tracking_data.db
+2024-10-16 11:34:17,231 - app - WARNING - Configuration key 'server_upload_url' not found. Using default value: None
+2024-10-16 11:34:17,231 - app - INFO - Initialized AuthManager for environment: dev
+2024-10-16 11:34:17,231 - app - INFO - Using urls ws://localhost/sockets/device, http://localhost/api/auth/device_auth
+2024-10-16 11:34:17,231 - app - INFO - Setting Mode to collect_data
+2024-10-16 11:34:17,232 - app - INFO - Configuration updated and saved to configuration/config.json
+2024-10-16 11:34:17,286 - app - INFO - Configuration updated and saved to configuration/config.json
+2024-10-16 11:34:17,286 - app - INFO - Tracker Mode is collect_data
+2024-10-16 11:34:17,286 - app - WARNING - Configuration key 'fps' not found. Using default value: 30
+2024-10-16 11:34:17,413 - app - INFO - Initialized TrackerManager with mode: collect_data
+2024-10-16 11:34:17,413 - app - INFO - Mode set to collect_data
+2024-10-16 11:34:17,414 - app - INFO - Starting tracking in mode: collect_data
+2024-10-16 11:34:17,480 - app - INFO - Successfully obtained new JWT token
+2024-10-16 11:34:17,516 - app - INFO - Connected to WebSocket server
+2024-10-16 11:34:17,517 - app - INFO - Configuration updated and saved to configuration/config.json
+2024-10-16 11:34:22,427 - app - INFO - Sending data from tracking loop
+2024-10-16 11:34:24,963 - app - INFO - Upload successful
+2024-10-16 11:34:27,428 - app - INFO - Sending data from tracking loop
+2024-10-16 11:34:27,582 - app - INFO - Setting Mode to idle
+2024-10-16 11:34:27,680 - app - INFO - Stopped TrackerManager
+2024-10-16 11:34:27,681 - app - INFO - Tracking task cancelled
+2024-10-16 11:34:27,681 - app - INFO - Stopped TrackerManager
+2024-10-16 11:34:27,681 - app - INFO - Cleaned up TrackerManager resources
+2024-10-16 11:34:27,681 - app - INFO - Configuration updated and saved to configuration/config.json
+2024-10-16 11:34:27,681 - app - INFO - Mode set to idle
+2024-10-16 11:36:19,155 - app - INFO - Cleaning up resources...
+2024-10-16 11:36:19,156 - app - INFO - Disconnected from WebSocket server
+2024-10-16 11:36:19,156 - app - INFO - AuthManager cleaned up
+2024-10-16 11:36:21,803 - app - INFO - Starting the application
+2024-10-16 11:36:21,803 - app - INFO - Configuration loaded from configuration/config.json
+2024-10-16 11:36:21,803 - app - INFO - Available weights ['best.pt', 'yolov8n.pt']
+2024-10-16 11:36:21,804 - app - INFO - Database initialized successfully at tracking_data.db
+2024-10-16 11:36:21,804 - app - WARNING - Configuration key 'server_upload_url' not found. Using default value: None
+2024-10-16 11:36:21,804 - app - INFO - Initialized AuthManager for environment: dev
+2024-10-16 11:36:21,804 - app - INFO - Using urls ws://localhost/sockets/device, http://localhost/api/auth/device_auth
+2024-10-16 11:36:21,804 - app - INFO - Setting Mode to idle
+2024-10-16 11:36:21,804 - app - INFO - No change in Mode
+2024-10-16 11:36:21,861 - app - INFO - Successfully obtained new JWT token
+2024-10-16 11:36:21,895 - app - INFO - Connected to WebSocket server
+2024-10-16 11:36:21,896 - app - INFO - Configuration updated and saved to configuration/config.json
+2024-10-16 11:43:42,211 - app - INFO - Cleaning up resources...
+2024-10-16 11:43:42,213 - app - INFO - Disconnected from WebSocket server
+2024-10-16 11:43:42,213 - app - INFO - AuthManager cleaned up
+2024-10-16 15:24:04,764 - app - INFO - Starting the application
+2024-10-16 15:24:04,764 - app - INFO - Configuration loaded from configuration/config.json
+2024-10-16 15:24:04,764 - app - INFO - Available weights ['best.pt', 'yolov8n.pt']
+2024-10-16 15:24:04,765 - app - INFO - Database initialized successfully at tracking_data.db
+2024-10-16 15:24:04,765 - app - WARNING - Configuration key 'server_upload_url' not found. Using default value: None
+2024-10-16 15:24:04,765 - app - INFO - Initialized AuthManager for environment: dev
+2024-10-16 15:24:04,765 - app - INFO - Using urls ws://localhost/sockets/device, http://localhost/api/auth/device_auth
+2024-10-16 15:24:04,766 - app - INFO - Setting Mode to idle
+2024-10-16 15:24:04,766 - app - INFO - No change in Mode
+2024-10-16 15:24:04,823 - app - INFO - Successfully obtained new JWT token
+2024-10-16 15:24:04,859 - app - INFO - Connected to WebSocket server
+2024-10-16 15:24:04,859 - app - INFO - Configuration updated and saved to configuration/config.json
+2024-10-16 15:29:20,184 - app - INFO - Cleaning up resources...
+2024-10-16 15:29:20,185 - app - INFO - Disconnected from WebSocket server
+2024-10-16 15:29:20,185 - app - INFO - AuthManager cleaned up
+2024-10-16 15:29:22,456 - app - INFO - Starting the application
+2024-10-16 15:29:22,456 - app - INFO - Configuration loaded from configuration/config.json
+2024-10-16 15:29:22,456 - app - INFO - Available weights ['best.pt', 'yolov8n.pt']
+2024-10-16 15:29:22,457 - app - INFO - Database initialized successfully at tracking_data.db
+2024-10-16 15:29:22,457 - app - WARNING - Configuration key 'server_upload_url' not found. Using default value: None
+2024-10-16 15:29:22,457 - app - INFO - Initialized AuthManager for environment: dev
+2024-10-16 15:29:22,457 - app - INFO - Using urls ws://localhost/sockets/device, http://localhost/api/auth/device_auth
+2024-10-16 15:29:22,457 - app - INFO - Setting Mode to idle
+2024-10-16 15:29:22,457 - app - INFO - No change in Mode
+2024-10-16 15:29:22,521 - app - INFO - Successfully obtained new JWT token
+2024-10-16 15:29:22,556 - app - INFO - Connected to WebSocket server
+2024-10-16 15:29:22,557 - app - INFO - Configuration updated and saved to configuration/config.json
+2024-10-16 15:30:22,896 - app - INFO - Cleaning up resources...
+2024-10-16 15:30:22,896 - app - INFO - Disconnected from WebSocket server
+2024-10-16 15:30:22,897 - app - INFO - AuthManager cleaned up
+2024-10-22 12:53:30,977 - app - INFO - Starting the application
+2024-10-22 12:53:30,977 - app - INFO - Configuration loaded from configuration/config.json
+2024-10-22 12:53:30,977 - app - INFO - Available weights ['best.pt', 'yolov8n.pt']
+2024-10-22 12:53:30,978 - app - INFO - Database initialized successfully at tracking_data.db
+2024-10-22 12:53:30,978 - app - WARNING - Configuration key 'server_upload_url' not found. Using default value: None
+2024-10-22 12:53:30,978 - app - INFO - Initialized AuthManager for environment: dev
+2024-10-22 12:53:30,978 - app - INFO - Using urls ws://localhost/sockets/device, http://localhost/api/auth/device_auth
+2024-10-22 12:53:30,978 - app - INFO - Setting Mode to idle
+2024-10-22 12:53:30,978 - app - INFO - No change in Mode
+2024-10-22 12:53:31,003 - app - ERROR - Failed to authenticate device: 401
+2024-10-22 12:53:31,003 - app - ERROR - Error during authentication: Authentication failed with status 401
+2024-10-22 12:53:31,004 - app - ERROR - 
+2024-10-22 12:53:34,575 - app - INFO - Cleaning up resources...
+2024-10-22 12:53:34,575 - app - INFO - Disconnected from WebSocket server
+2024-10-22 12:53:34,575 - app - INFO - AuthManager cleaned up
+2024-10-22 12:54:19,817 - app - INFO - Starting the application
+2024-10-22 12:54:19,817 - app - INFO - Configuration loaded from configuration/config.json
+2024-10-22 12:54:19,817 - app - INFO - Available weights ['best.pt', 'yolov8n.pt']
+2024-10-22 12:54:19,818 - app - INFO - Database initialized successfully at tracking_data.db
+2024-10-22 12:54:19,818 - app - WARNING - Configuration key 'server_upload_url' not found. Using default value: None
+2024-10-22 12:54:19,818 - app - INFO - Initialized AuthManager for environment: dev
+2024-10-22 12:54:19,818 - app - INFO - Using urls ws://localhost/sockets/device, http://localhost/api/auth/device_auth
+2024-10-22 12:54:19,818 - app - INFO - Setting Mode to idle
+2024-10-22 12:54:19,818 - app - INFO - No change in Mode
+2024-10-22 12:54:19,879 - app - INFO - Successfully obtained new JWT token
+2024-10-22 12:54:19,911 - app - INFO - Connected to WebSocket server
+2024-10-22 12:54:19,911 - app - INFO - Configuration updated and saved to configuration/config.json
+2024-10-22 12:55:57,844 - app - INFO - Cleaning up resources...
+2024-10-22 12:55:57,845 - app - INFO - Disconnected from WebSocket server
+2024-10-22 12:55:57,845 - app - INFO - AuthManager cleaned up
+2025-02-13 13:04:08,981 - app - INFO - Starting the application
+2025-02-13 13:35:12,970 - app - INFO - Starting the application
+2025-02-13 13:48:08,211 - app - INFO - Starting the application
+2025-02-13 13:48:08,211 - app - INFO - Configuration loaded from configuration/config.json
+2025-02-13 13:48:08,211 - app - INFO - Available weights ['best.pt', 'yolov8n.pt']
+2025-02-13 13:48:08,220 - app - INFO - Database initialized successfully at tracking_data.db
+2025-02-13 13:48:08,220 - app - WARNING - Configuration key 'server_upload_url' not found. Using default value: None
+2025-02-13 13:48:08,220 - app - INFO - Initialized AuthManager for environment: dev
+2025-02-13 13:48:08,220 - app - INFO - Using urls ws://localhost/sockets/device, http://localhost/api/auth/device_auth
+2025-02-13 13:48:08,220 - app - INFO - Setting Mode to idle
+2025-02-13 13:48:08,220 - app - INFO - No change in Mode
+2025-02-13 13:48:08,252 - app - ERROR - Failed to authenticate device: 401
+2025-02-13 13:48:08,252 - app - ERROR - Error during authentication: Authentication failed with status 401
+2025-02-13 13:48:08,252 - app - ERROR - 
+2025-02-13 13:48:10,100 - app - INFO - Cleaning up resources...
+2025-02-13 13:48:10,100 - app - INFO - Disconnected from WebSocket server
+2025-02-13 13:48:10,100 - app - INFO - AuthManager cleaned up
+2025-02-13 13:48:55,339 - app - INFO - Starting the application
+2025-02-13 13:48:55,339 - app - INFO - Configuration loaded from configuration/config.json
+2025-02-13 13:48:55,339 - app - INFO - Available weights ['best.pt', 'yolov8n.pt']
+2025-02-13 13:48:55,341 - app - INFO - Database initialized successfully at tracking_data.db
+2025-02-13 13:48:55,341 - app - WARNING - Configuration key 'server_upload_url' not found. Using default value: None
+2025-02-13 13:48:55,341 - app - INFO - Initialized AuthManager for environment: dev
+2025-02-13 13:48:55,341 - app - INFO - Using urls ws://localhost/sockets/device, http://localhost/api/auth/device_auth
+2025-02-13 13:48:55,341 - app - INFO - Setting Mode to idle
+2025-02-13 13:48:55,341 - app - INFO - No change in Mode
+2025-02-13 13:48:55,367 - app - ERROR - Failed to authenticate device: 401
+2025-02-13 13:48:55,368 - app - ERROR - Error during authentication: Authentication failed with status 401
+2025-02-13 13:48:55,368 - app - ERROR - 
+2025-02-13 13:49:00,394 - app - ERROR - Failed to authenticate device: 401
+2025-02-13 13:49:00,395 - app - ERROR - Error during authentication: Authentication failed with status 401
+2025-02-13 13:49:00,395 - app - ERROR - Authentication failed with status 401
+2025-02-13 13:49:02,001 - app - INFO - Cleaning up resources...
+2025-02-13 13:49:02,001 - app - INFO - Disconnected from WebSocket server
+2025-02-13 13:49:02,002 - app - INFO - AuthManager cleaned up

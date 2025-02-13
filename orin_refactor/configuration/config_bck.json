@@ -1,0 +1,51 @@
+{
+    "device_id": 11,
+    "upload_url": "https://us-central1-cleancurrentscoalition.cloudfunctions.net/upload-images",
+    "motion_iou": "0.3",
+    "resolution": [
+        1920,
+        1080
+    ],
+    "interval": 0.5,
+    "motion_hit_count": 4,
+    "source": "/dev/video0",
+    "enable_uploads": false,
+    "use_cloud_function": false,
+    "save_dir": "output",
+    "show": false,
+    "upload_interval": 300,
+    "mode": "motion_track",
+    "calibration_length": "100",
+    "counting_region_top": 75,
+    "counting_region_bottom": 25,
+    "upload_threshold": 20,
+    "miss_threshold": 40,
+    "counter_miss_condition": 5,
+    "stream": true,
+    "stream_resolution": [
+        640,
+        480
+    ],
+    "stream_key":"",
+    "rtmp_url": "rtmp://localhost/live/stream",
+    "motion": false,
+    "show_bboxes": false,
+    "conf_threshold": 0.5,
+    "save_images": false,
+    "save_videos": false,
+    "weights": "best.pt",
+    "output": "output",
+    "send_telemetry": true,
+    "max_no_motion_frames": 30,
+    "names": {
+        "0": "plastic_cup",
+        "1": "small_plastic_bottle",
+        "2": "plastic_container",
+        "3": "foam_container",
+        "4": "plastic_bag",
+        "5": "plastic_wrapper",
+        "6": "sports_ball",
+        "7": "foam_other",
+        "8": "plastic_bottle"
+    }
+}

@@ -1,0 +1,13 @@
+[Unit]
+Description=Trash Tracking program
+After=network.target
+
+[Service]
+Type=simple
+User=orin
+WorkingDirectory=/home/orin/orin_refactor
+ExecStart=/usr/bin/python3 /home/orin/orin_refactor/main.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

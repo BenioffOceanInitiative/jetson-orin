@@ -1,0 +1,60 @@
+{
+  "upload_url": "https://us-central1-cleancurrentscoalition.cloudfunctions.net/upload-images",
+  "motion_iou": 0.3,
+  "upload_resolution": [
+    1920,
+    1080
+  ],
+  "stream_resolution": [
+    640,
+    360
+  ],
+  "motion_interval": 1.2,
+  "motion_hit_count": 4,
+  "source": "/dev/video0",
+  "enable_uploads": true,
+  "use_cloud_function": true,
+  "save_dir": "output",
+  "upload_interval": 5,
+  "calibration_length": 10,
+  "available_weights": [
+    "best.pt",
+    "yolov8n.pt"
+  ],
+  "counting_region_top": 75,
+  "counting_region_bottom": 25,
+  "upload_threshold": 20,
+  "miss_threshold": 40,
+  "counter_miss_condition": 5,
+  "stream": false,
+  "tracking_enabled": true,
+  "rtmp_url": "rtmp://localhost/live/",
+  "telemetry_interval": 3,
+  "manual_tracking": false,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "mode": "idle",
+  "stream_key": "1KP9rqcVaqnyOSTuz4drY1RNiOkHO9tyd0h615Jyr-E",
+  "motion": false,
+  "show_bboxes": true,
+  "conf_threshold": 0.5,
+  "save_images": false,
+  "save_videos": false,
+  "weights": "best.pt",
+  "send_telemetry": true,
+  "motion_triggered_tracking": true,
+  "max_no_motion_frames": 30,
+  "names": {
+    "0": "plastic_cup",
+    "1": "small_plastic_bottle",
+    "2": "plastic_container",
+    "3": "foam_container",
+    "4": "plastic_bag",
+    "5": "plastic_wrapper",
+    "6": "sports_ball",
+    "7": "foam_other",
+    "8": "plastic_bottle"
+  }
+}

@@ -1,0 +1,11 @@
+aiofiles
+aiohttp
+aiosqlite
+ffmpeg_python
+numpy
+opencv_python
+psutil
+python-dotenv
+scipy
+ultralytics
+websockets
