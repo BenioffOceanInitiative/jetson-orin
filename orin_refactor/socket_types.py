@@ -22,11 +22,13 @@ class Topic(StrEnum):
     DEVICE_DATA = "data"
     TELEMETRY='telemetry'
     ERROR_REPORT = "error"
+    LOG_FILE="log_file"
     PING_RESPONSE = "ping"
     CLIENT_INFO = "info"
     DEVICE_CONFIG = "config"
     AUTHENTICATION_RESULT = "authentication_result"
-    CALIBRATION_RESULT = 'calibration_result'
+    CALIBRATION_RESULT = "calibration_result"
+    UPDATE_WEIGHTS= "update_weights"
 
 class AuthenticationResult(StrEnum):
     SUCCESS = "true"
@@ -69,9 +71,11 @@ class PayloadKeys(StrEnum):
     RESOLUTION = 'resolution'
     STREAM_RESOLUTION= 'stream_resolution'
     CALIBRATION_RESULT = 'calibration_result'
+    WEIGHT_FILE_URL="weight_file_URL"
     
 class ConfigKeys(StrEnum):
     upload_url = "upload_url"
+    device_name ="device_name"
     motion_iou = "motion_iou"
     upload_resolution = "upload_resolution"
     stream_resolution = "stream_resolution"
@@ -96,10 +100,15 @@ class ConfigKeys(StrEnum):
     conf_threshold = "conf_threshold"
     save_images = "save_images"
     save_videos = "save_videos"
+    video_length = "video_length"
+    fps = "fps"
+    max_image_storage_limit = "max_media_storage_limit"
+    max_video_storage_limit = "max_video_storage_limit"
     weights = "weights"
     max_no_motion_frames = "max_no_motion_frames"
     names = "names"
     telemetry_interval = "telemetry_interval"
+    working_dir= "working_dir"
     
     
 class Control(StrEnum):
@@ -109,6 +118,7 @@ class Control(StrEnum):
 
 class MessageKeys(StrEnum):
     DEVICE_ID = "device_id"
+    DEVICE_SECRET="device_secret"
     TOPIC = "topic"
     PAYLOAD = "payload"
     ACTION = "action"

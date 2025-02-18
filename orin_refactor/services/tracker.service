@@ -1,13 +1,17 @@
 [Unit]
 Description=Trash Tracking program
-After=network.target
+After=network.target ssh-agent.service  
+Requires=ssh-agent.service             
 
 [Service]
 Type=simple
 User=orin
 WorkingDirectory=/home/orin/orin_refactor
+Environment=SSH_AUTH_SOCK=/tmp/ssh-agent.sock
+Environment=PYTHONUNBUFFERED=1       
 ExecStart=/usr/bin/python3 /home/orin/orin_refactor/main.py
 Restart=on-failure
+RestartSec=10                          
 
 [Install]
 WantedBy=multi-user.target

@@ -1,5 +1,5 @@
 import asyncio
-import logging
+from logger import logger
 from typing import Tuple
 import ffmpeg
 from config_manager import ConfigManager
@@ -9,7 +9,7 @@ import os
 class StreamManager:
     def __init__(self, config_manager: ConfigManager):
         self.config_manager = config_manager
-        self.logger = logging.getLogger("app")
+        self.logger = logger
         self.process = None
         self.stream_active = False
         self.input_resolution: list = [640, 480]

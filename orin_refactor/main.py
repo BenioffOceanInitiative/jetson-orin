@@ -16,6 +16,8 @@ from datetime import datetime, timezone
 import cv2
 import time
 import os
+import aiofiles
+import aiohttp
 
 class TrackingApplication:
     def __init__(self):
@@ -148,6 +150,8 @@ class TrackingApplication:
                 
             elif message[MessageKeys.TOPIC] == Topic.COMMAND_CONTROL:
                 await self.handle_control_command(message[MessageKeys.PAYLOAD])
+            elif message[MessageKeys.TOPIC] == Topic.UPDATE_WEIGHTS:
+                await self.update_weights(message[MessageKeys.PAYLOAD])
         except Exception as e:
             await self.append_error(e)
             
@@ -156,8 +160,45 @@ class TrackingApplication:
             await self.config_manager.update(config)
             await self.reset()
         except Exception as e:
-            await self.append_error(e) 
+            await self.append_error(e)
+    
+    async def update_weights(self,payload:MessageKeys.PAYLOAD):
+        try:
+            file_url:str = payload[PayloadKeys.WEIGHT_FILE_URL]
+            weight_file_name = file_url.split('/')[-1]
             
+            if file_url is None:
+                await self.append_error("No weight file url provided")
+                return
+            presigned_url = self.auth_manager.get_presigned_url(file_url)
+            
+            if presigned_url is None:
+                await self.append_error("Failed to get presigned url")
+                return
+            prev_mode = self.current_mode
+            if prev_mode != Mode.IDLE:
+                await self.set_mode(Mode.IDLE)
+            async with aiohttp.ClientSession() as session:
+                async with session.get(presigned_url) as resp:
+                    if resp.status == 200:
+                        f = await aiofiles.open(f'./weights/{weight_file_name}', mode='wb')
+                        await f.write(await resp.read())
+                        await f.close()
+            self.config_manager.update({ConfigKeys.weights:weight_file_name})
+            await self.set_mode(prev_mode)
+        except Exception as e:
+            await self.append_error(f"failed to update weights: {e}")
+            
+    async def send_logs(self):
+        try:
+            async with aiofiles.open("logs/app.log", mode='r') as f:
+                contents = await f.read()
+                return contents
+        except FileNotFoundError:
+            self.logger.error("Send logs couldn't find app.log")
+        except Exception as e:
+            return f"Error while retrieving logs: {e}"
+                
     async def reset(self):
         prev_mode = self.current_mode
         await self.upload_manager.initialize()

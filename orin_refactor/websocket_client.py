@@ -1,7 +1,7 @@
 import asyncio
 import websockets
 import json
-import logging
+from logger import logger
 from typing import Dict, Any, AsyncGenerator
 from configuration.config import DEVICE_ID
 from config_manager import ConfigManager
@@ -14,8 +14,8 @@ class WebSocketClient:
         self.auth_manager = auth_manager
         self.websocket = None
         self.connected = False
-        self.logger = logging.getLogger("app")
-        self.reconnect_interval = 5  # seconds
+        self.logger = logger
+        self.reconnect_interval = 5
         self.device_id = DEVICE_ID
         self.last_connection_error = ''
         self.connection_error = False
@@ -133,4 +133,4 @@ class WebSocketClient:
             action = Action.SET_VALUE,
             payload=Payload(data={PayloadKeys.ERROR:errors})
         )
-    
+        await self.send_message(message)

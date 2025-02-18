@@ -1,8 +1,9 @@
 import asyncio
 import cv2
-import logging
+from logger import logger
 from typing import Dict, Any, Optional,AsyncIterator,Tuple,List
 from ultralytics import YOLO
+from storage_manager import StorageManager
 from config_manager import ConfigManager
 from capture_manager import CaptureManager
 from object_counter import ObjectCounter
@@ -19,7 +20,7 @@ class TrackerManager:
         self.capture_manager = CaptureManager(self.config_manager)
         self.stream_manager = None
         self.object_counter = ObjectCounter(config_manager)
-        self.logger = logging.getLogger("app")
+        self.logger = logger
         self.model = None
         self.mode: Mode = mode
         self.motion_detected: bool = False
@@ -30,6 +31,9 @@ class TrackerManager:
         self.stream = False
         self.prev_frames: list[np.ndarray] = []
         self.device_id = os.getenv("DEVICE_ID")
+        self.storage_manager = None
+        self.save_video = False
+        self.videoWriter = None
 
     async def initialize(self):
         await self.object_counter.init_config()
@@ -46,11 +50,15 @@ class TrackerManager:
         self.max_no_motion_frames = self.config_manager.get(ConfigKeys.max_no_motion_frames, 20)
         self.show_bboxes = self.config_manager.get(ConfigKeys.show_bboxes,False)
         self.upload_interval = int(self.config_manager.get(ConfigKeys.upload_interval,200))
+        self.save_video = self.config_manager.get(ConfigKeys.save_videos)
+        self.storage_manager = StorageManager()
         
         if self.mode == Mode.STREAM_ONLY:
             self.stream_manager = StreamManager(self.config_manager)
+            self.save_video = False
             await self.initialiaze_stream()
-        
+        if self.save_video:
+            self.videoWriter = cv2.VideoWriter()
         await self.capture_manager.initialize()
         self.logger.info(f"Initialized TrackerManager with mode: {self.mode}")
 
@@ -234,6 +242,8 @@ class TrackerManager:
         results = await self.process_frame(frame)
         if results and len(results) > 0:
             tracking_data = await self.process_results(results[0], frame)
+            if self.save_video:
+                await self.save_video(frame)
             if tracking_data:
                 yield tracking_data, frame
         
@@ -271,7 +281,13 @@ class TrackerManager:
         except Exception as e:
             self.logger.error(f"Error processing results: {e}")
             return None
-        
+    
+    async def save_frame(self,frame):
+        if self.video_frames < self.video_frame_limit:
+            self.videoWriter.write(frame)
+        else:
+            self.save_video = False
+            
     async def _check_motion(self, frame: np.ndarray) -> bool:
         motion_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         motion_frame = cv2.GaussianBlur(motion_frame, (21, 21), 0)

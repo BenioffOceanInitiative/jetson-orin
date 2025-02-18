@@ -15,6 +15,7 @@ class AuthManager:
         self.device_secret: str = os.getenv('DEVICE_SECRET', '')
         self.auth_server_url: str = os.getenv('AUTH_SERVER_URL', '')
         self.ws_server_url: str = os.getenv('WS_SERVER_URL', '')
+        self.files_url: str = os.getenv("FILES_URL","")
         self.environment: str = os.getenv('ENVIRONMENT', 'dev')
         self.jwt_token: Optional[str] = None
         self.jwt_expiry: Optional[datetime] = None
@@ -53,7 +54,7 @@ class AuthManager:
             try:
                 async with session.post(
                     self.auth_server_url,
-                    json={MessageKeys.DEVICE_ID: self.device_id, "device_secret": self.device_secret},
+                    json={MessageKeys.DEVICE_ID: self.device_id, MessageKeys.DEVICE_SECRET: self.device_secret},
                     ssl=self.ssl_context
                 ) as response:
                     if response.status == 200:
@@ -69,6 +70,21 @@ class AuthManager:
             except Exception as e:
                 self.logger.error(f"Error during authentication: {e}")
                 raise
+            
+    async def get_presigned_url(self,file_name):
+        async with aiohttp.ClientSession() as session:
+            try:
+                async with session.post(
+                    f'{self.files_url}/{file_name}',
+                    json={MessageKeys.DEVICE_ID: self.device_id,MessageKeys.DEVICE_SECRET:self.device_secret},
+                    ssl = self.ssl_context
+                ) as response:
+                    if(response.status == 200):
+                        data = await response.json()
+                        url = data['url']
+                        return url
+            except Exception as e:
+                self.logger.error("Failed to get presigned url")
 
     def get_ssl_context(self) -> ssl.SSLContext:
         return self.ssl_context

@@ -71,7 +71,7 @@ class ObjectCounter:
             class_name = self.names[cls]
             self.total_counts[class_name] = self.total_counts.get(class_name, 0) + 1
             self.collected_total += 1
-
+        
     async def manage_target_object(self, boxes: List[List[float]], track_ids: List[int]):
         if self.frame_counter - self.last_seen > self.counter_miss_condition:
             self.miss_counter += 1
@@ -94,6 +94,12 @@ class ObjectCounter:
                 lowest_object = {"id": track_id, "box": [x, y]}
         return lowest_object
 
+    #TODO
+    async def process_total_counts(self)->Dict:
+        # loop through counting list and determine max counted class for each ID
+        # return dict of classes and counts
+        return {}
+            
     async def clear(self):
         self.total_counts = {name: 0 for name in self.names}
         self.collected_total = 0

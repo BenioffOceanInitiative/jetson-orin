@@ -2,7 +2,7 @@ from config_manager import ConfigManager
 from datetime import datetime
 import aiohttp
 from aiohttp import FormData
-import logging
+from logger import logger
 import numpy as np
 import json
 import cv2
@@ -11,7 +11,7 @@ import time
 import os
 from socket_types import ConfigKeys
 from configuration import config
-logger = logging.getLogger("app")
+
 class UploadManager:
     def __init__(self,config_manager:ConfigManager):
         self.config_manager = config_manager   
