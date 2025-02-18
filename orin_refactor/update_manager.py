@@ -14,7 +14,6 @@ class GitRepoWatcher:
     
     async def is_remote_updated(self) -> bool:
         try:
-            # Use asyncio subprocess for fetch
             fetch_proc = await asyncio.create_subprocess_exec(
                 'git', 'fetch',
                 cwd=self.working_dir,
@@ -27,7 +26,6 @@ class GitRepoWatcher:
                 logger.error(f"Fetch failed: {fetch_err.decode()}")
                 return False
             
-            # Check status
             status_proc = await asyncio.create_subprocess_exec(
                 'git', 'status', '-uno',
                 cwd=self.working_dir,

@@ -188,7 +188,14 @@ class TrackingApplication:
             await self.set_mode(prev_mode)
         except Exception as e:
             await self.append_error(f"failed to update weights: {e}")
-            
+
+    async def update_code(self):
+        try:
+            pass
+        except Exception as e:
+            await self.append_error(f"Failed to update code :{e}")
+    
+    
     async def send_logs(self):
         try:
             async with aiofiles.open("logs/app.log", mode='r') as f:
